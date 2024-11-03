@@ -22,16 +22,16 @@ namespace OOP_learn
 			{
 				mom.Milk -= mom.Ten_percent;
 				mom.Energy = mom.Milk * 500;
-				Energy += Ten_percent * 500;
+				Energy += mom.Ten_percent * 500;
 			}
 		}
 
         public override string ToString()
         {
-			string result = $"Name: {Name}, Gender: {Gender}, Energy: {Energy}, ";
+			string result = $"Name: {Name}, Gender: {Gender}, Energy: {Energy}";
 
 			if (Gender == Genders.Female)
-				result += $"Milk: {Milk}";
+				result += $", Milk: {Milk}";
 			return result;
         }
 

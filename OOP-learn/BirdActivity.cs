@@ -17,7 +17,7 @@ namespace OOP_learn
 	[Activity (Label = "BirdActivity")]			
 	public class BirdActivity : Activity
 	{
-        Animal bird;
+        Bird bird;
         Button ret, talk, walk;
         TextView name;
         protected override void OnCreate (Bundle savedInstanceState)
