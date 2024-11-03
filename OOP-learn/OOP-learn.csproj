@@ -67,6 +67,9 @@
     <Compile Include="Fish.cs" />
     <Compile Include="Bird.cs" />
     <Compile Include="Dog.cs" />
+    <Compile Include="FishActivity.cs" />
+    <Compile Include="DogActivity.cs" />
+    <Compile Include="BirdActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
