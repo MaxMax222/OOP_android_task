@@ -10,15 +10,37 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/toDogs"
-        android:text="Dogs"/>
+        android:text="Dog"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/toBirds"
-        android:text="Birds"/>
+        android:text="Bird"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/toFishes"
-        android:text="Fishes"/>
+        android:text="Fish"/>
+
+       <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/DisplayDogs"
+        android:text="display Dogs"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/DisplayBirds"
+        android:text="display birds"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/DisplayFishes"
+        android:text="display fishes"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create Animals"
+        android:id="@+id/Create"/>
+
 </LinearLayout>

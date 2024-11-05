@@ -53,7 +53,7 @@ namespace OOP_learn
 
         private void Init()
         {
-            fish = new Fish("Blob", Animal.Genders.Male, 1000);
+            fish = new Fish("Blob", Animal.Genders.Male, 1000, 43);
 
 			ret = FindViewById<Button>(Resource.Id.ret);
 			talk = FindViewById<Button>(Resource.Id.talkBtn);

@@ -54,14 +54,14 @@ namespace OOP_learn
 
         private void Init()
         {
-            bird = new Bird("Sigma Crow", Animal.Genders.Male, 1000);
+            bird = new Bird("Sigma Crow", Animal.Genders.Male, 1000, 200);
 
             ret = FindViewById<Button>(Resource.Id.ret);
             talk = FindViewById<Button>(Resource.Id.talkBtn);
             walk = FindViewById<Button>(Resource.Id.moveBtn);
             name = FindViewById<TextView>(Resource.Id.nameTxt);
 
-            name.Text += bird.Name;
+            name.Text = bird.ToString();
         }
     }
 }
