@@ -140,7 +140,7 @@ namespace OOP_learn
                 intent.PutExtra("Gender", edit_gender.Text);
                 if (type < 3)
 				{
-					intent.PutExtra("Energry", edit_energy.Text);
+					intent.PutExtra("Energy", edit_energy.Text);
 					intent.PutExtra("Special", edit_special.Text);
                 }
 				else

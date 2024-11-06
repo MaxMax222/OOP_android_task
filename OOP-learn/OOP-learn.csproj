@@ -71,6 +71,7 @@
     <Compile Include="DogActivity.cs" />
     <Compile Include="BirdActivity.cs" />
     <Compile Include="CreateAnimals.cs" />
+    <Compile Include="DisplayActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -127,6 +128,10 @@
       <Generator></Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\CreateAnimals.xml">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\DisplayAnimals.xml">
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>

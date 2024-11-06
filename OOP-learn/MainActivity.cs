@@ -31,6 +31,31 @@ namespace OOP_learn
             bird.Click += Bird_Click;
 
             create.Click += Create_Click;
+
+            Dfish.Click += Dfish_Click;
+            Ddog.Click += Ddog_Click;
+            Dbird.Click += Dbird_Click;
+        }
+
+        private void Dbird_Click(object sender, EventArgs e)
+        {
+            var intent = new Intent(this, typeof(DisplayActivity));
+            intent.PutExtra("info", FilterAnimal(animals, typeof(Bird)));
+            StartActivity(intent);
+        }
+
+        private void Ddog_Click(object sender, EventArgs e)
+        {
+            var intent = new Intent(this, typeof(DisplayActivity));
+            intent.PutExtra("info", FilterAnimal(animals, typeof(Dog)));
+            StartActivity(intent);
+        }
+
+        private void Dfish_Click(object sender, EventArgs e)
+        {
+            var intent = new Intent(this, typeof(DisplayActivity));
+            intent.PutExtra("info", FilterAnimal(animals, typeof(Fish)));
+            StartActivity(intent);
         }
 
         private void Create_Click(object sender, EventArgs e)
@@ -89,9 +114,24 @@ namespace OOP_learn
                         animals.Add(new Dog(name, gender, double.Parse(data.GetStringExtra("Milk"))));
                         break;
                     default:
-                        break;
+                        break;  
                 }
             }
+        }
+
+        //TODO Add xml for displaying the array
+        string[] FilterAnimal(List<Animal> animals, Type animalType)
+        {
+            List<string> filtered = new List<string>();
+            foreach (var animal in animals)
+            {
+                if (animalType.IsAssignableFrom(animal.GetType()))
+                {
+                    filtered.Add(animal.ToString());
+                }
+            }
+
+           return filtered.ToArray();
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
