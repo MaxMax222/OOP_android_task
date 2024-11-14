@@ -88,7 +88,6 @@ namespace OOP_learn
 			edit_gender = new EditText(this);
 			edit_gender.LayoutParameters = size_of_edit;
 			edit_gender.Hint = "Enter gender (1 - male / 2 - female)";
-            edit_gender.InputType = Android.Text.InputTypes.NumberFlagSigned | Android.Text.InputTypes.NumberFlagDecimal;
             main.AddView(edit_gender);
 
 			if (type != 3)
@@ -96,12 +95,10 @@ namespace OOP_learn
 				edit_energy = new EditText(this);
 				edit_energy.LayoutParameters = size_of_edit;
 				edit_energy.Hint = "Enter energy amount";
-				edit_energy.InputType = Android.Text.InputTypes.NumberFlagSigned | Android.Text.InputTypes.NumberFlagDecimal;
 				main.AddView(edit_energy);
 
 				edit_special = new EditText(this);
 				edit_special.LayoutParameters = size_of_edit;
-                edit_special.InputType = Android.Text.InputTypes.NumberFlagSigned | Android.Text.InputTypes.NumberFlagDecimal;
 				switch (type)
 				{
 					case 1:
@@ -118,7 +115,6 @@ namespace OOP_learn
 				edit_milk = new EditText(this);
                 edit_milk.LayoutParameters = size_of_edit;
                 edit_milk.Hint = "Enter milk amount";
-                edit_milk.InputType = Android.Text.InputTypes.NumberFlagSigned | Android.Text.InputTypes.NumberFlagDecimal;
                 main.AddView(edit_milk);
             }
 
@@ -132,7 +128,8 @@ namespace OOP_learn
 
         private void Submit_Click(object sender, EventArgs e)
         {
-			if (ValidateForm(type))
+            var toast = Toast.MakeText(this, "Incorrect input, try again", ToastLength.Long);
+            if (ValidateForm(type))
 			{ 
 				var intent = new Intent();
 				intent.PutExtra("type", type);
@@ -148,7 +145,13 @@ namespace OOP_learn
 					intent.PutExtra("Milk", edit_milk.Text);
 				}
                 SetResult(Result.Ok, intent);
+				toast.SetText("a new animal was created");
+				toast.Show();
 				Finish();
+			}
+			else
+			{
+				toast.Show();
 			}
         }
 
@@ -157,11 +160,11 @@ namespace OOP_learn
 			bool result = edit_gender.Text == "1" || edit_gender.Text == "2";
 			if (type != 3)
 			{
-				result = result && edit_energy.Text != "" && edit_special.Text != "";
-			}
+				result = result && int.TryParse(edit_energy.Text, out _) && int.TryParse(edit_special.Text, out _);
+            }
 			else
 			{
-				result = result && edit_milk.Text != "";
+				result = result && int.TryParse(edit_milk.Text,out _);
 			}
 
 			return result;
